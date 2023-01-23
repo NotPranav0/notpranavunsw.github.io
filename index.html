@@ -5,8 +5,10 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
+            color: beige;
             background: rgb(18, 18, 18);
             margin-top: 80px;
+            
         }
         #container {
             width: 700px;
@@ -20,6 +22,7 @@
             border-radius: 50%;
         }
         .item {
+            color: rgb(18, 18, 18);
             grid-area:1/1;
             line-height: 120px;
             text-align: center;
@@ -30,15 +33,15 @@
         }
 
         .item:hover {
-            background: rgb(255, 0, 0);
+            background: rgb(156, 156, 156);
 
         }
         .center {
             grid-area:1/1;
-            line-height: 120px;
+            line-height: 90px;
             text-align: center;
             border-radius: 50%;
-            background: rgb(225, 225, 225);
+            background: rgb(18, 18, 18);
             transform: scale(3);
         }
         @keyframes spin {
@@ -56,7 +59,7 @@
             <div id = "text4" class="item" style="--d:-6s">Cancel?</div>
             <div id = "text5" class="item" style="--d:-8s">RickRoll</div>
             <div id = "text6" class="item" style="--d:-10s">Random Fact API?</div>
-            <div id = "center1" class="center"><p>DEFAULT PICTURE</p></div>
+            <div id = "center1" class="center"><p style="margin: 0%; line-height: 0px; margin-top: 30px; font-size: 14px;">Pranav Budhwar</p><img style="border-radius: 50%; margin-top: 10px;" src = "me.jpeg" width="85px" height = "105px"></div>
           </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>
@@ -69,21 +72,146 @@
         const div6 = document.getElementById("text6");
         const div7 = document.getElementById("center1");
         div1.addEventListener("click", function() {
-            div7.innerHTML = "text1!";
+            div7.innerHTML = '';  
+            div7.style.marginTop = "7px"
+            div7.style.fontSize = "12px"
+            div7.style.lineHeight = "10px"
+            let p1 = document.createElement('p');
+            let br = document.createElement('br');
+            p1.textContent = "Hi, Im Pranav"
+            div7.appendChild(p1);
+            div7.appendChild(br);
+            let p2 = document.createElement('p');
+            p2.textContent="I'm 19"
+            div7.appendChild(p2);
+            div7.appendChild(br);
+            let p3 = document.createElement('p');
+            p3.textContent="and I'm a third year studying quantum eng/computer science"
+            p3.style.marginTop = "0px"
+            p3.style.lineHeight = "15px"
+            div7.appendChild(p3);
         });
         div2.addEventListener("click", function() {
-            div7.innerHTML = "text2!";
+            div7.innerHTML = '';  
+            div7.style.lineHeight = "10px"
+            div7.style.marginTop = "50px"
+            let discLink = document.createElement('a');
+            let faceLink = document.createElement('a');
+            let instaLink = document.createElement('a');
+            discLink.setAttribute('href', 'http://discordapp.com/users/250344608364625930');
+            faceLink.setAttribute('href', 'https://www.facebook.com/pranav.budhwar.1');
+            instaLink.setAttribute('href', 'https://instagram.com/pranav_budhwar');
+            discLink.setAttribute('target', '_blank');
+            faceLink.setAttribute('target', '_blank');
+            instaLink.setAttribute('target', '_blank');
+            let disc = document.createElement('img');
+            let face = document.createElement('img');
+            let insta = document.createElement('img');
+            let br = document.createElement('br');
+            disc.src = "discord.png"
+            disc.width = "50";
+            disc.height = "50";
+            disc.style.marginTop = "0px";
+            disc.style.marginLeft = "0px";
+            disc.style.marginRight = "0px";
+            disc.style.marginBottom = "0px";
+            disc.style.borderRadius = "50%";
+            disc.style.border = "0px";
+            disc.style.marginRight = "10px";
+            face.src = "facebook.webp"
+            face.width = "50";
+            face.height = "50";
+            face.style.marginTop = "0px";
+            face.style.marginLeft = "0px";
+            face.style.marginRight = "0px";
+            face.style.marginBottom = "0px";
+            face.style.borderRadius = "50%";
+            face.style.border = "0px";
+            face.style.marginRight = "10px";
+            insta.src = "insta.jpeg"
+            insta.width = "50";
+            insta.height = "50";
+            insta.style.marginTop = "0px";
+            insta.style.marginLeft = "0px";
+            insta.style.marginRight = "0px";
+            insta.style.marginBottom = "0px";
+            insta.style.borderRadius = "50%";
+            insta.style.border = "0px";
+            insta.style.marginRight = "10px";
+            discLink.appendChild(disc);
+            faceLink.appendChild(face);
+            instaLink.appendChild(insta);
+            div7.appendChild(discLink);
+            div7.appendChild(faceLink);
+            div7.appendChild(instaLink);
         });
         div3.addEventListener("click", function() {
-            div7.innerHTML = "text3!";
+            div7.innerHTML = '';    
+            div7.style.lineHeight = "10px"
+            div7.style.marginTop = "30px"
+            let p = document.createElement('p');
+            p.textContent = "I alternate between playing chess and valorant (whatever is less tilting) and love building and flying drones."
+            p.style.lineHeight = "10px"
+            p.style.fontSize = "10px"
+            p.style.marginBottom = "5px"
+            p.style.marginTop = "25px"
+            div7.appendChild(p);
+            let valLink = document.createElement('a');
+            let chessLink = document.createElement('a');
+            valLink.setAttribute('href', 'https://tracker.gg/valorant/profile/riot/NotPranav%23OCEE/overview');
+            chessLink.setAttribute('href', 'https://www.chess.com/member/parry141');
+            valLink.setAttribute('target', '_blank');
+            chessLink.setAttribute('target', '_blank');
+            let val = document.createElement('img');
+            let chess = document.createElement('img');
+            val.src = "val.webp"
+            val.width = "30";
+            val.height = "30";
+            val.style.marginTop = "0px";
+            val.style.marginLeft = "0px";
+            val.style.marginRight = "0px";
+            val.style.marginBottom = "0px";
+            val.style.borderRadius = "50%";
+            val.style.border = "0px";
+            val.style.marginRight = "10px";
+            chess.src = "chess.png"
+            chess.width = "30";
+            chess.height = "30";
+            chess.style.marginTop = "0px";
+            chess.style.marginLeft = "0px";
+            chess.style.marginRight = "0px";
+            chess.style.marginBottom = "0px";
+            chess.style.borderRadius = "50%";
+            chess.style.border = "0px";
+            chess.style.marginRight = "10px";
+            valLink.appendChild(val);
+            chessLink.appendChild(chess);
+            div7.appendChild(valLink);
+            div7.appendChild(chessLink);
         });
         div4.addEventListener("click", function() {
-            div7.innerHTML = "text4!";
+            div7.innerHTML = '';  
+            div7.style.marginTop = "0px"
+            div7.innerHTML = `<p style="margin: 0%; line-height: 0px; margin-top: 30px; font-size: 14px;">Pranav Budhwar</p><img style="border-radius: 50%; margin-top: 10px;" src = "me.jpeg" width="85px" height = "105px">`;
         });
         div5.addEventListener("click", function() {
-            div7.innerHTML = "text5!";
+            div7.innerHTML = '';    
+            div7.style.marginTop = "0px"
+            let frame = document.createElement('iframe');
+            frame.src = "https://www.youtube.com/embed/dQw4w9WgXcQ"
+            frame.width = "150";
+            frame.height = "150";
+            frame.style.border = "0";
+            frame.style.borderRadius = "50%";
+            frame.style.marginTop = "0px";
+            div7.appendChild(frame);
+
         });
-        div6.addEventListener("click", function() {    
+        div6.addEventListener("click", function() {
+            div7.innerHTML = '';    
+            div7.style.marginTop = "0px"
+            let p = document.createElement('p');
+            div7.appendChild(p);
             div7.children[0].innerHTML = 'please wait...'
             var limit = 1;
             $.ajax({
