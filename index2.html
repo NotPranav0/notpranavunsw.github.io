@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Circle Website</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(18, 18, 18);
+            margin-top: 100px;
+        }
+        #container {
+            width: 700px;
+            height: 700px;
+            margin: 40px auto;
+            border: 0px solid rgb(255, 0, 0);
+            display:grid;
+            grid-template-columns:150px;
+            grid-template-rows:150px;
+            place-content: center;
+            border-radius: 50%;
+        }
+        .item {
+            grid-area:1/1;
+            line-height: 120px;
+            text-align: center;
+            border-radius: 50%;
+            background: rgb(225, 225, 225);
+            animation: spin 12s var(--d,0s) linear infinite; /* duration = 12s, numbor of item = 6 so a delay of 12/6 = 2s */
+            transform:rotate(0) translate(300px) rotate(0);
+        }
+
+        .item:hover {
+            background: rgb(255, 0, 0);
+
+        }
+        .center {
+            grid-area:1/1;
+            line-height: 120px;
+            text-align: center;
+            border-radius: 50%;
+            background: rgb(225, 225, 225);
+            transform: scale(3);
+        }
+        @keyframes spin {
+            100% {
+            transform:rotate(1turn) translate(300px) rotate(-1turn);
+        }
+}
+    </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id = "text1" class="item" style="--d:0s">About Me</div>
+            <div id = "text2" class="item" style="--d:-2s">Socials</div>
+            <div id = "text3" class="item" style="--d:-4s">Hobbies</div>
+            <div id = "text4" class="item" style="--d:-6s">Cancel?</div>
+            <div id = "text5" class="item" style="--d:-8s">RickRoll</div>
+            <div id = "text6" class="item" style="--d:-10s">Random Fact API?</div>
+            <div id = "center1" class="center"><p>DEFAULT PICTURE</p></div>
+          </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+
+        const div1 = document.getElementById("text1");
+        const div2 = document.getElementById("text2");
+        const div3 = document.getElementById("text3");
+        const div4 = document.getElementById("text4");
+        const div5 = document.getElementById("text5");
+        const div6 = document.getElementById("text6");
+        const div7 = document.getElementById("center1");
+        div1.addEventListener("click", function() {
+            div7.innerHTML = "text1!";
+        });
+        div2.addEventListener("click", function() {
+            div7.innerHTML = "text2!";
+        });
+        div3.addEventListener("click", function() {
+            div7.innerHTML = "text3!";
+        });
+        div4.addEventListener("click", function() {
+            div7.innerHTML = "text4!";
+        });
+        div5.addEventListener("click", function() {
+            div7.innerHTML = "text5!";
+        });
+        div6.addEventListener("click", function() {    
+            div7.children[0].innerHTML = 'please wait...'
+            var limit = 1;
+            $.ajax({
+                method: 'GET',
+                url: 'https://api.api-ninjas.com/v1/facts?limit=' + limit,
+                headers: { 'X-Api-Key': 'KzGcwH+O0wDZPDZY8ve4RA==9g9zLlRE34uxpiWT'},
+                contentType: 'application/json',
+                success: function(result) {
+                    console.log(result[0].fact.length);
+                    if (result[0].fact.length > 100) {
+                        div6.click();
+                        return;
+                    }
+                    div7.children[0].innerHTML = result[0].fact;
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                }
+            });
+            div7.children[0].style.fontSize = "8px"
+            div7.children[0].style.lineHeight = "20px"
+            div7.children[0].style.marginTop = "50px"
+            div7.children[0].style.marginLeft = "10px"
+            div7.children[0].style.marginRight = "10px"
+            div7.children[0].style.marginBottom = "10px"
+
+        });
+        </script>
+    </body>
+</html>
