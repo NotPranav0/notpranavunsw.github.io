@@ -28,12 +28,13 @@
             text-align: center;
             border-radius: 50%;
             background: rgb(225, 225, 225);
-            animation: spin 12s var(--d,0s) linear infinite; /* duration = 12s, numbor of item = 6 so a delay of 12/6 = 2s */
+            animation: spin 12s var(--d,0s) linear infinite;
             transform:rotate(0) translate(300px) rotate(0);
         }
 
         .item:hover {
             background: rgb(156, 156, 156);
+            cursor: pointer;
 
         }
         .center {
@@ -56,9 +57,9 @@
             <div id = "text1" class="item" style="--d:0s">About Me</div>
             <div id = "text2" class="item" style="--d:-2s">Socials</div>
             <div id = "text3" class="item" style="--d:-4s">Hobbies</div>
-            <div id = "text4" class="item" style="--d:-6s">Cancel?</div>
-            <div id = "text5" class="item" style="--d:-8s">RickRoll</div>
-            <div id = "text6" class="item" style="--d:-10s">Random Fact API?</div>
+            <div id = "text4" class="item" style="--d:-6s">Home</div>
+            <div id = "text5" class="item" style="--d:-8s">Surprise!</div>
+            <div id = "text6" class="item" style="--d:-10s">Random Fact</div>
             <div id = "center1" class="center"><p style="margin: 0%; line-height: 0px; margin-top: 30px; font-size: 14px;">Pranav Budhwar</p><img style="border-radius: 50%; margin-top: 10px;" src = "me.jpeg" width="85px" height = "105px"></div>
           </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
